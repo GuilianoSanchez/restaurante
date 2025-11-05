@@ -397,6 +397,7 @@ export default function App() {
     return <Login onLoginSuccess={handleLoginSuccess} />;
   }
 
+  
   // Enrutamiento basado en el perfil del usuario
   switch (user.perfil?.toLowerCase()) {
     case 'administrador':
