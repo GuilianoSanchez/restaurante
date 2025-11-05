@@ -352,6 +352,7 @@ function DashboardTrabajador({ user, onLogout }) {
   );
 }
 
+
 // Componente principal App con enrutamiento por roles
 export default function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
