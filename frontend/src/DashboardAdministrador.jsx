@@ -487,16 +487,16 @@ function DashboardAdministrador({ user, onLogout }) {
         )}
       </div>
 
-      <header className="bg-gradient-to-r from-purple-600 to-blue-600 text-white shadow-lg">
+      <header className="bg-gradient-to-r from-blue-600 to-blue-600 text-white shadow-lg">
         <div className="max-w-7xl mx-auto px-4 py-4">
           <div className="flex justify-between items-center">
             <div>
               <h1 className="text-2xl font-bold">👨‍💼 Panel Administrador</h1>
-              <p className="text-sm text-purple-100">{user.nombre}</p>
+              <p className="text-sm text-blue-100">{user.nombre}</p>
             </div>
             <button 
               onClick={onLogout} 
-              className="bg-white text-purple-600 px-4 py-2 rounded-lg font-semibold hover:bg-purple-50 transition-colors"
+              className="bg-white text-blue-600 px-4 py-2 rounded-lg font-semibold hover:bg-blue-50 transition-colors"
             >
               🚪 Cerrar Sesión
             </button>
@@ -514,7 +514,7 @@ function DashboardAdministrador({ user, onLogout }) {
                 onClick={() => setActiveTab(tab)}
                 className={`px-6 py-3 font-semibold capitalize ${
                   activeTab === tab 
-                    ? 'border-b-2 border-purple-600 text-purple-600' 
+                    ? 'border-b-2 border-blue-600 text-blue-600' 
                     : 'text-gray-500 hover:text-gray-700'
                 }`}
               >
@@ -542,7 +542,7 @@ function DashboardAdministrador({ user, onLogout }) {
                 <input
                   type="text"
                   placeholder="Identificación"
-                  className="border border-gray-300 p-2 rounded-md focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                  className="border border-gray-300 p-2 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   value={nuevaIdentificacion}
                   onChange={(e) => setNuevaIdentificacion(e.target.value)}
                   autoComplete="off"
@@ -550,7 +550,7 @@ function DashboardAdministrador({ user, onLogout }) {
                 <input
                   type="text"
                   placeholder="Nombre completo"
-                  className="border border-gray-300 p-2 rounded-md focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                  className="border border-gray-300 p-2 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   value={nuevoNombre}
                   onChange={(e) => setNuevoNombre(e.target.value)}
                   autoComplete="off"
@@ -558,7 +558,7 @@ function DashboardAdministrador({ user, onLogout }) {
                 <input
                   type="email"
                   placeholder="Email"
-                  className="border border-gray-300 p-2 rounded-md focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                  className="border border-gray-300 p-2 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   value={nuevoEmail}
                   onChange={(e) => setNuevoEmail(e.target.value)}
                   autoComplete="off"
@@ -566,13 +566,13 @@ function DashboardAdministrador({ user, onLogout }) {
                 <input
                   type="password"
                   placeholder="Contraseña"
-                  className="border border-gray-300 p-2 rounded-md focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                  className="border border-gray-300 p-2 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   value={nuevoPassword}
                   onChange={(e) => setNuevoPassword(e.target.value)}
                   autoComplete="new-password"
                 />
                 <select
-                  className="border border-gray-300 p-2 rounded-md focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                  className="border border-gray-300 p-2 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   value={nuevoPerfil}
                   onChange={(e) => setNuevoPerfil(e.target.value)}
                 >
@@ -594,7 +594,7 @@ function DashboardAdministrador({ user, onLogout }) {
                 )}
                 <button
                   onClick={crearUsuario}
-                  className="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 font-semibold transition-colors"
+                  className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 font-semibold transition-colors"
                 >
                   ➕ Crear
                 </button>
@@ -610,7 +610,7 @@ function DashboardAdministrador({ user, onLogout }) {
                     >
                       <div>
                         <p className="font-semibold text-gray-800">
-                          <span className="inline-block px-2 py-1 text-xs rounded-full bg-purple-100 text-purple-700 mr-2">
+                          <span className="inline-block px-2 py-1 text-xs rounded-full bg-blue-100 text-blue-700 mr-2">
                             {u.perfil}
                           </span>
                           {u.nombre}
@@ -676,7 +676,7 @@ function DashboardAdministrador({ user, onLogout }) {
             <div className="mb-4 grid grid-cols-1 md:grid-cols-3 gap-2">
               <input type="text" placeholder="Nombre de la empresa" className="border p-2 rounded" value={empresaForm.nombre} onChange={e => setEmpresaForm(f => ({ ...f, nombre: e.target.value }))} />
               <div className="flex gap-2">
-                <button onClick={guardarEmpresa} className="bg-purple-600 text-white px-4 py-2 rounded">{empresaForm.id ? 'Guardar' : 'Crear'}</button>
+                <button onClick={guardarEmpresa} className="bg-blue-600 text-white px-4 py-2 rounded">{empresaForm.id ? 'Guardar' : 'Crear'}</button>
                 <button onClick={() => setEmpresaForm({ id: null, nombre: '' })} className="bg-gray-200 px-4 py-2 rounded">Limpiar</button>
               </div>
             </div>
@@ -845,7 +845,7 @@ function DashboardAdministrador({ user, onLogout }) {
                 Cancelar
               </button>
               <button 
-                className="px-4 py-2 bg-purple-600 text-white hover:bg-purple-700 rounded transition font-semibold" 
+                className="px-4 py-2 bg-blue-600 text-white hover:bg-blue-700 rounded transition font-semibold" 
                 onClick={handleMenuSave}
               >
                 {menuForm.id ? 'Guardar Cambios' : 'Crear Menú'}

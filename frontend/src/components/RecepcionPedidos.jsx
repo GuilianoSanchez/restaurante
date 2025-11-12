@@ -140,7 +140,7 @@ function RecepcionPedidos({ user }) {
       <div className="fixed top-6 right-6 z-50">
         {toast.show && (
           <div className={`max-w-sm px-4 py-3 rounded-lg shadow-lg text-white ${
-            toast.type === 'success' ? 'bg-green-600' :
+            toast.type === 'success' ? 'bg-green-300' :
             toast.type === 'error' ? 'bg-red-600' :
             toast.type === 'warning' ? 'bg-yellow-600 text-black' :
             'bg-blue-600'
@@ -156,7 +156,7 @@ function RecepcionPedidos({ user }) {
         <button
           onClick={exportarExcel}
           disabled={pedidos.length === 0}
-          className="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 disabled:bg-gray-300 disabled:cursor-not-allowed transition font-semibold"
+          className="bg-green-300 text-white px-4 py-2 rounded-lg hover:bg-green-300 disabled:bg-gray-300 disabled:cursor-not-allowed transition font-semibold"
         >
           📊 Exportar Excel
         </button>
@@ -173,7 +173,7 @@ function RecepcionPedidos({ user }) {
               type="date"
               value={filtroFecha}
               onChange={(e) => setFiltroFecha(e.target.value)}
-              className="w-full border border-gray-300 p-2 rounded-lg focus:ring-2 focus:ring-purple-500"
+              className="w-full border border-gray-300 p-2 rounded-lg focus:ring-2 focus:ring-teal-500"
             />
           </div>
 
@@ -184,7 +184,7 @@ function RecepcionPedidos({ user }) {
             <select
               value={filtroEmpresa}
               onChange={(e) => setFiltroEmpresa(e.target.value)}
-              className="w-full border border-gray-300 p-2 rounded-lg focus:ring-2 focus:ring-purple-500"
+              className="w-full border border-gray-300 p-2 rounded-lg focus:ring-2 focus:ring-teal-500"
             >
               <option value="">Todas las empresas</option>
               {empresas.map(emp => (
@@ -200,7 +200,7 @@ function RecepcionPedidos({ user }) {
             <select
               value={vistaAgrupada}
               onChange={(e) => setVistaAgrupada(e.target.value)}
-              className="w-full border border-gray-300 p-2 rounded-lg focus:ring-2 focus:ring-purple-500"
+              className="w-full border border-gray-300 p-2 rounded-lg focus:ring-2 focus:ring-teal-500"
             >
               <option value="trabajador">Por Trabajador</option>
               <option value="empresa">Por Empresa</option>
@@ -210,7 +210,7 @@ function RecepcionPedidos({ user }) {
           <div className="flex items-end">
             <button
               onClick={cargarPedidos}
-              className="w-full bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition font-semibold"
+              className="w-full bg-teal-600 text-white px-4 py-2 rounded-lg hover:bg-teal-700 transition font-semibold"
             >
               🔄 Actualizar
             </button>
@@ -227,8 +227,8 @@ function RecepcionPedidos({ user }) {
         
         {Object.entries(stats.porOpcion).map(([opcion, cantidad], idx) => {
           const colors = [
-            'from-green-500 to-green-600',
-            'from-purple-500 to-purple-600',
+            'from-green-300 to-green-300',
+            'from-teal-500 to-teal-600',
             'from-orange-500 to-orange-600'
           ];
           return (
@@ -247,7 +247,7 @@ function RecepcionPedidos({ user }) {
       <div className="bg-white rounded-xl shadow-md p-6">
         {loading ? (
           <div className="text-center py-12">
-            <div className="inline-block animate-spin rounded-full h-12 w-12 border-4 border-purple-600 border-t-transparent"></div>
+            <div className="inline-block animate-spin rounded-full h-12 w-12 border-4 border-teal-600 border-t-transparent"></div>
             <p className="mt-4 text-gray-600">Cargando pedidos...</p>
           </div>
         ) : grupos.length === 0 ? (
@@ -285,7 +285,7 @@ function RecepcionPedidos({ user }) {
                       )}
                     </div>
                     <div className="flex items-center gap-4">
-                      <span className="bg-purple-100 text-purple-700 px-3 py-1 rounded-full font-semibold">
+                      <span className="bg-teal-100 text-teal-700 px-3 py-1 rounded-full font-semibold">
                         {grupo.pedidos.length} pedido{grupo.pedidos.length !== 1 ? 's' : ''}
                       </span>
                       <span className="text-gray-400">
