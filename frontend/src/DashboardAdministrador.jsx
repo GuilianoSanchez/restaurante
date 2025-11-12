@@ -698,25 +698,72 @@ function DashboardAdministrador({ user, onLogout }) {
       {/* Edit User Modal */}
       {showEditModal && (
         <div className="fixed inset-0 z-40 flex items-center justify-center bg-black/40">
-          <div className="bg-white rounded-lg shadow-xl w-full max-w-lg p-6">
-            <h3 className="text-lg font-semibold mb-4">Editar usuario</h3>
-            <div className="space-y-3">
-              <input className="w-full border p-2 rounded" value={editForm.nombre} onChange={e => setEditForm(f => ({ ...f, nombre: e.target.value }))} placeholder="Nombre" />
-              <input className="w-full border p-2 rounded" value={editForm.email} onChange={e => setEditForm(f => ({ ...f, email: e.target.value }))} placeholder="Email" />
-              <select className="w-full border p-2 rounded" value={editForm.perfil} onChange={e => setEditForm(f => ({ ...f, perfil: e.target.value }))}>
-                <option value="trabajador">Trabajador</option>
-                <option value="vendedor">Vendedor</option>
-                <option value="supervisor">Supervisor</option>
-                <option value="administrador">Administrador</option>
-              </select>
-              <input className="w-full border p-2 rounded" value={editForm.password} onChange={e => setEditForm(f => ({ ...f, password: e.target.value }))} placeholder="Nueva contraseña (opcional)" />
-            </div>
-            <div className="mt-4 flex justify-end gap-2">
-              <button className="px-4 py-2 rounded bg-gray-200" onClick={() => setShowEditModal(false)}>Cancelar</button>
-              <button className="px-4 py-2 rounded bg-blue-600 text-white" onClick={handleEditSave}>Guardar</button>
-            </div>
-          </div>
+      <div className="bg-white rounded-lg shadow-xl w-full max-w-lg p-6">
+        <h3 className="text-lg font-semibold mb-4">Editar usuario</h3>
+        <div className="space-y-3">
+          <input
+            className="w-full border p-2 rounded"
+            value={editForm.nombre}
+            onChange={e => setEditForm(f => ({ ...f, nombre: e.target.value }))}
+            placeholder="Nombre"
+          />
+          <input
+            className="w-full border p-2 rounded"
+            value={editForm.email}
+            onChange={e => setEditForm(f => ({ ...f, email: e.target.value }))}
+            placeholder="Email"
+          />
+
+          {/* 🔹 Combo box de empresas */}
+          <select
+            className="w-full border p-2 rounded"
+            value={editForm.empresa_id || ""}
+            onChange={e => setEditForm(f => ({ ...f, empresa_id: e.target.value }))}
+          >
+            <option value="">Seleccione empresa</option>
+            {empresas.map(emp => (
+              <option key={emp.id} value={emp.id}>
+                {emp.nombre}
+              </option>
+            ))}
+          </select>
+
+          <select
+            className="w-full border p-2 rounded"
+            value={editForm.perfil}
+            onChange={e => setEditForm(f => ({ ...f, perfil: e.target.value }))}
+          >
+            <option value="trabajador">Trabajador</option>
+            <option value="vendedor">Vendedor</option>
+            <option value="supervisor">Supervisor</option>
+            <option value="administrador">Administrador</option>
+          </select>
+
+          <input
+            type="password"
+            className="w-full border p-2 rounded"
+            value={editForm.password}
+            onChange={e => setEditForm(f => ({ ...f, password: e.target.value }))}
+            placeholder="Nueva contraseña (opcional)"
+          />
         </div>
+
+        <div className="mt-4 flex justify-end gap-2">
+          <button
+            className="px-4 py-2 rounded bg-gray-200"
+            onClick={() => setShowEditModal(false)}
+          >
+            Cancelar
+          </button>
+          <button
+            className="px-4 py-2 rounded bg-blue-600 text-white"
+            onClick={handleEditSave}
+          >
+            Guardar
+          </button>
+        </div>
+      </div>
+    </div>
       )}
 
       {/* Delete User Modal */}
